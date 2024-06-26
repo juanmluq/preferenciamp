@@ -6,7 +6,7 @@
   import bodyParser from "body-parser";
   import cookieParser from "cookie-parser";
   import cors from 'cors';
-  import { PORT, MPKEY } from './config.js';
+  import { PORT, MP } from './config.js';
 
   app.use(cors())
   app.use(morgan('dev'));
@@ -21,7 +21,7 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8214833007776308-04
 
 app.get("/pruebapagina", async (req, res)=>{
     res.status(200).send("pagina funcionando");
-   console.log(PORT)
+   console.log(MP)
 })
 
 app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
