@@ -1,17 +1,13 @@
   // en package.json con el "type" : "module" puedo importar de la siguiente manera: import express from "express"
-
   import express from "express"
   import { MercadoPagoConfig, Preference } from 'mercadopago';
   const app = express();
+  import cors from 'cors';
   import { PORT, MPKEY } from './config.js';
-//   require('dotenv').config();
-//   const {
-//     MP_KEY, PORT
-//   } = require("../config.js");
+  
+  app.use(cors())
 
-
-// Agrega credenciales
-const client = new MercadoPagoConfig({ accessToken: "APP_USR-8214833007776308-041716-d6a52e949590a6ab9beb8587e25f9c8b-130971066" });
+const client = new MercadoPagoConfig({ accessToken: `${MPKEY}` });
 
 app.get("/pruebapagina", async (req, res)=>{
     res.status(200).send("pagina cargada!")
@@ -49,20 +45,10 @@ app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
 
         preference.create({
           body: preferenc
-        //   {
-        //     // false,
-        //     items: [
-        //       {
-        //         title: 'My product',
-        //         quantity: 1,
-        //         unit_price: 2000
-        //       }
-        //     ],
-        //   }
+    
         })
         .then(
             function (response) {
-        //    console.log(response.items)
                 res.json({
                 id: response.id
             });
