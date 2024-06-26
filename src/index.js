@@ -3,6 +3,8 @@
   import express from "express"
   import { MercadoPagoConfig, Preference } from 'mercadopago';
   const app = express()
+  import { PORT, MPKEY } from "./config.js";
+
 
 // Agrega credenciales
 const client = new MercadoPagoConfig({ accessToken: "APP_USR-8214833007776308-041716-d6a52e949590a6ab9beb8587e25f9c8b-130971066" });
@@ -67,5 +69,5 @@ app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
 })
    
 
-  app.listen(3002)
-  console.log("Server is listening on port ", 3002)
+  app.listen(PORT);
+  console.log("Server is listening on port ", PORT)
