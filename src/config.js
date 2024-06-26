@@ -1,3 +1,3 @@
 export const PORT = process.env.PORT || 3000; 
-export const MP = process.env.MP || 2545;
+export const MP_KEY = process.env.MP_KEY || 2545;
 
