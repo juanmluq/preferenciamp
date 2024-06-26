@@ -10,7 +10,6 @@
 
   app.use(cors())
   app.use(morgan('dev'));
-  app.name = 'prefPago';
   app.use(bodyParser.urlencoded({
     extended: false
     //  extended: true, limit: '50mb'
