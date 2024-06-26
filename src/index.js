@@ -2,11 +2,12 @@
 
   import express from "express"
   import { MercadoPagoConfig, Preference } from 'mercadopago';
-  const app = express()
-  require('dotenv').config();
-  const {
-    MP_KEY, PORT
-  } = require("../config.js");
+  const app = express();
+  import { PORT, MPKEY } from './config.js';
+//   require('dotenv').config();
+//   const {
+//     MP_KEY, PORT
+//   } = require("../config.js");
 
 
 // Agrega credenciales
@@ -32,9 +33,9 @@ app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
     let preferenc = {
         items: [
             {
-                title: req.body.description,
-                   unit_price: Number(req.body.price),
-                   quantity: Number(req.body.quantity),
+                title: "prueba",
+                   unit_price: 10,
+                   quantity: 10
             }
         ],
         back_urls: {
