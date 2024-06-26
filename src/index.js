@@ -2,12 +2,12 @@
   import express from "express"
   import { MercadoPagoConfig, Preference } from 'mercadopago';
   const app = express();
-  import cors from 'cors';
+  import { cors } from 'cors';
   import { PORT, MPKEY } from './config.js';
-  
+
   app.use(cors())
 
-const client = new MercadoPagoConfig({ accessToken: `${MPKEY}` });
+const client = new MercadoPagoConfig({ accessToken: MPKEY });
 
 app.get("/pruebapagina", async (req, res)=>{
     res.status(200).send("pagina cargada!")
