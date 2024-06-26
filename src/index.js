@@ -29,9 +29,9 @@ app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
     let preferenc = {
         items: [
             {
-                title: "prueba",
-                   unit_price: 10,
-                   quantity: 10
+                  title: req.body.description,
+                   unit_price: Number(req.body.price),
+                   quantity: Number(req.body.quantity),
             }
         ],
         back_urls: {
