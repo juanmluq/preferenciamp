@@ -6,7 +6,7 @@
   import bodyParser from "body-parser";
   import cookieParser from "cookie-parser";
   import cors from 'cors';
-  import { PORT, MP_KEY, PRUEBA } from './config.js';
+  import { DB_PORT, MP_KEY, PRUEBA } from './config.js';
 
   app.use(cors())
   app.use(morgan('dev'));
@@ -70,5 +70,5 @@ app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
 })
    
 
-  app.listen(PORT);
-  console.log("Server is listening on port ", PORT)
+  app.listen(DB_PORT);
+  console.log("Server is listening on port ", DB_PORT)
