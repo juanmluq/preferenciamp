@@ -4,14 +4,8 @@
   import { MercadoPagoConfig, Preference } from 'mercadopago';
   const app = express();
   import { PORT, MPKEY } from './config.js';
-//   require('dotenv').config();
-//   const {
-//     MP_KEY, PORT
-//   } = require("../config.js");
 
-
-// Agrega credenciales
-const client = new MercadoPagoConfig({ accessToken: "APP_USR-8214833007776308-041716-d6a52e949590a6ab9beb8587e25f9c8b-130971066" });
+const client = new MercadoPagoConfig({ accessToken: `${MPKEY}` });
 
 app.get("/pruebapagina", async (req, res)=>{
     res.status(200).send("pagina cargada!")
@@ -33,9 +27,9 @@ app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
     let preferenc = {
         items: [
             {
-                title: "prueba",
-                   unit_price: 10,
-                   quantity: 10
+                title: req.body.description,
+                unit_price: Number(req.body.price),
+                quantity: Number(req.body.quantity),
             }
         ],
         back_urls: {
