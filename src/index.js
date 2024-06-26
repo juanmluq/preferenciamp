@@ -3,7 +3,7 @@
   import express from "express"
   import { MercadoPagoConfig, Preference } from 'mercadopago';
   const app = express()
-  import { PORT, MPKEY } from "./config.js";
+  import { PORT } from "./config.js";
 
 
 // Agrega credenciales
