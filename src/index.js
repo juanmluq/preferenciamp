@@ -16,7 +16,7 @@
      }));
   app.use(bodyParser.json({ limit: '50mb' }));
   app.use(cookieParser());
-const token = STRING (MPKEY)
+
 const client = new MercadoPagoConfig({ accessToken: "APP_USR-8214833007776308-041716-d6a52e949590a6ab9beb8587e25f9c8b-130971066" });
 
 app.get("/pruebapagina", async (req, res)=>{
