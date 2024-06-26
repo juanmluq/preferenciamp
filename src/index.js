@@ -1,5 +1,4 @@
   // en package.json con el "type" : "module" puedo importar de la siguiente manera: import express from "express"
-
   import express from "express"
   import { MercadoPagoConfig, Preference } from 'mercadopago';
   const app = express();
@@ -40,23 +39,11 @@ app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
         auto_return: "approved",
     };
 
-
         preference.create({
           body: preferenc
-        //   {
-        //     // false,
-        //     items: [
-        //       {
-        //         title: 'My product',
-        //         quantity: 1,
-        //         unit_price: 2000
-        //       }
-        //     ],
-        //   }
         })
         .then(
             function (response) {
-        //    console.log(response.items)
                 res.json({
                 id: response.id
             });
