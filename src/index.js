@@ -2,10 +2,21 @@
   import express from "express"
   import { MercadoPagoConfig, Preference } from 'mercadopago';
   const app = express();
+  import morgan from "morgan";
+  import bodyParser from "body-parser";
+  import cookieParser from "cookie-parser";
   import cors from 'cors';
   import { PORT, MPKEY } from './config.js';
 
   app.use(cors())
+  app.use(morgan('dev'));
+  app.name = 'prefPago';
+  app.use(bodyParser.urlencoded({
+    extended: false
+    //  extended: true, limit: '50mb'
+     }));
+  app.use(bodyParser.json({ limit: '50mb' }));
+  app.use(cookieParser());
 
 const client = new MercadoPagoConfig({ accessToken: MPKEY });
 
