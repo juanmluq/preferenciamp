@@ -17,7 +17,7 @@
   app.use(bodyParser.json({ limit: '50mb' }));
   app.use(cookieParser());
 
-const client = new MercadoPagoConfig({ accessToken: `${MPKEY}` });
+const client = new MercadoPagoConfig({ accessToken: "`${MPKEY}`" });
 
 app.get("/pruebapagina", async (req, res)=>{
     res.status(200).send("pagina cargada!")
