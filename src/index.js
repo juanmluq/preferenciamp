@@ -3,7 +3,10 @@
   import express from "express"
   import { MercadoPagoConfig, Preference } from 'mercadopago';
   const app = express()
-  import { PORT } from "./config.js";
+  require('dotenv').config();
+  const {
+    MP_KEY, PORT
+  } = require("../config.js");
 
 
 // Agrega credenciales
