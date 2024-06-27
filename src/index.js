@@ -21,7 +21,7 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8214833007776308-04
 
 app.get("/pruebapagina", async (req, res)=>{
     res.status(200).send("pagina funcionando");
-   console.log(PRUEBA)
+   console.log(MP_KEY)
 })
 
 app.post("/create_preference/:user/:id/:saldo/:usercomp", async (req, res)=> {
